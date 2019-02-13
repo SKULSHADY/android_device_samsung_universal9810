@@ -110,6 +110,12 @@ TARGET_SPECIFIC_HEADER_PATH := $(COMMON_PATH)/include
 BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
 TARGET_SYSTEM_PROP += $(COMMON_PATH)/system.prop
 
+# Samsung hardware
+ifneq ($(findstring samsung, $(TARGET_PRODUCT)),)
+JAVA_SOURCE_OVERLAYS := \
+    com.samsung.hardware|hardware/samsung/samsunghw|**/*.java
+endif
+
 # Releasetools
 TARGET_RELEASETOOLS_EXTENSIONS := $(COMMON_PATH)/releasetools
 
