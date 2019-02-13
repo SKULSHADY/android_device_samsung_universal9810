@@ -110,12 +110,6 @@ TARGET_SPECIFIC_HEADER_PATH := $(COMMON_PATH)/include
 BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
 TARGET_SYSTEM_PROP += $(COMMON_PATH)/system.prop
 
-# Lineage hardware
-ifneq ($(findstring lineage, $(TARGET_PRODUCT)),)
-JAVA_SOURCE_OVERLAYS := \
-    org.lineageos.hardware|hardware/samsung/lineagehw|**/*.java
-endif
-
 # Releasetools
 TARGET_RELEASETOOLS_EXTENSIONS := $(COMMON_PATH)/releasetools
 
